@@ -14,7 +14,9 @@ function Register() {
         e.preventDefault()
 
         try {
-            const response = await axios.post("http://localhost:8080/api/auth/register",
+            const backendURL = import.meta.env.VITE_BACKEND_URL;
+
+            const response = await axios.post(`${backendURL}/api/auth/register`,
                 { name, email, password },
                 { withCredentials: true }
 

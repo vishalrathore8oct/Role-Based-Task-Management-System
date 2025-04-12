@@ -12,7 +12,9 @@ function Login() {
         e.preventDefault()
 
         try {
-            const response = await axios.post("http://localhost:8080/api/auth/login",
+            const backendURL = import.meta.env.VITE_BACKEND_URL;
+
+            const response = await axios.post(`${backendURL}/api/auth/login`,
                 { email, password },
                 { withCredentials: true }
 

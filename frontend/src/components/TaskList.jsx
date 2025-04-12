@@ -7,7 +7,9 @@ function TaskList() {
 
     const fetchTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/task/getTask", {
+            const backendURL = import.meta.env.VITE_BACKEND_URL;
+
+            const response = await axios.get(`${backendURL}/api/task/getTask`, {
                 withCredentials: true
             });
             console.log(response.data);

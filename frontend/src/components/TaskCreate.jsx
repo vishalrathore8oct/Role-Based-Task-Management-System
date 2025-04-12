@@ -14,7 +14,9 @@ function TaskCreate() {
         }
 
         try {
-            const response = await axios.post("http://localhost:8080/api/task/createTask", {
+            const backendURL = import.meta.env.VITE_BACKEND_URL;
+
+            const response = await axios.post(`${backendURL}/api/task/createTask`, {
                 title,
                 description
             }, {

@@ -20,7 +20,8 @@ function UserDashboard() {
 
     const handleLogout = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/auth/logout", {
+            const backendURL = import.meta.env.VITE_BACKEND_URL;
+            const response = await axios.get(`${backendURL}/api/auth/logout`, {
                 withCredentials: true,
             });
             console.log(response.data);
